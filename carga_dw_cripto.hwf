@@ -19,11 +19,11 @@
       <attributes/>
       <DayOfMonth>1</DayOfMonth>
       <hour>12</hour>
-      <intervalMinutes>60</intervalMinutes>
+      <intervalMinutes>1</intervalMinutes>
       <intervalSeconds>0</intervalSeconds>
       <minutes>0</minutes>
-      <repeat>N</repeat>
-      <schedulerType>0</schedulerType>
+      <repeat>Y</repeat>
+      <schedulerType>1</schedulerType>
       <weekDay>1</weekDay>
       <parallel>N</parallel>
       <xloc>144</xloc>
@@ -41,7 +41,7 @@
       <clear_rows>N</clear_rows>
       <create_parent_folder>N</create_parent_folder>
       <exec_per_row>N</exec_per_row>
-      <filename>C:\Users\heric\OneDrive\Documentos\Aulas PDI\Binance\stgs_cripto.hpl</filename>
+      <filename>${PROJECT_HOME}/stgs_cripto.hpl</filename>
       <loglevel>Basic</loglevel>
       <parameters>
         <pass_all_parameters>Y</pass_all_parameters>
@@ -68,8 +68,6 @@
       <create_parent_folder>N</create_parent_folder>
       <exec_per_row>N</exec_per_row>
       <filename>${PROJECT_HOME}/dim_cripto.hpl</filename>
-      <logext/>
-      <logfile/>
       <loglevel>Basic</loglevel>
       <parameters>
         <pass_all_parameters>Y</pass_all_parameters>
@@ -96,8 +94,6 @@
       <create_parent_folder>N</create_parent_folder>
       <exec_per_row>N</exec_per_row>
       <filename>${PROJECT_HOME}/fat_cripto.hpl</filename>
-      <logext/>
-      <logfile/>
       <loglevel>Basic</loglevel>
       <parameters>
         <pass_all_parameters>Y</pass_all_parameters>
