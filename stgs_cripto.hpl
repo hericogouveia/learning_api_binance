@@ -33,8 +33,8 @@
       <fontname>Segoe UI</fontname>
       <fontsize>9</fontsize>
       <height>26</height>
-      <xloc>32</xloc>
-      <yloc>144</yloc>
+      <xloc>256</xloc>
+      <yloc>128</yloc>
       <note>Loading staging prices from an API to a database</note>
       <width>269</width>
     </notepad>
@@ -53,8 +53,8 @@
       <fontname>Segoe UI</fontname>
       <fontsize>9</fontsize>
       <height>26</height>
-      <xloc>16</xloc>
-      <yloc>272</yloc>
+      <xloc>240</xloc>
+      <yloc>288</yloc>
       <note>Loading staging cripto list from an API to a database</note>
       <width>287</width>
     </notepad>
@@ -81,23 +81,18 @@
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>api binance 2</from>
-      <to>json_cripto</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
       <from>json_cripto</from>
       <to>usdt 2</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>start_cripto</from>
-      <to>api binance 2</to>
+      <from>usdt 2</from>
+      <to>stg_cripto</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>usdt 2</from>
-      <to>stg_cripto</to>
+      <from>api binance</from>
+      <to>json_cripto</to>
       <enabled>Y</enabled>
     </hop>
   </order>
@@ -142,53 +137,8 @@
     </result>
     <attributes/>
     <GUI>
-      <xloc>448</xloc>
-      <yloc>144</yloc>
-    </GUI>
-  </transform>
-  <transform>
-    <name>api binance 2</name>
-    <type>Rest</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <applicationType>TEXT PLAIN</applicationType>
-    <method>GET</method>
-    <url>https://api2.binance.com/api/v3/ticker/price</url>
-    <urlInField>N</urlInField>
-    <dynamicMethod>N</dynamicMethod>
-    <methodFieldName/>
-    <urlField/>
-    <bodyField/>
-    <httpLogin/>
-    <httpPassword>Encrypted </httpPassword>
-    <proxyHost/>
-    <proxyPort/>
-    <preemptive>N</preemptive>
-    <trustStoreFile/>
-    <trustStorePassword>Encrypted </trustStorePassword>
-    <ignoreSsl>N</ignoreSsl>
-    <headers>
-      </headers>
-    <parameters>
-      </parameters>
-    <matrixParameters>
-      </matrixParameters>
-    <result>
-      <name>result</name>
-      <code/>
-      <response_time/>
-      <response_header/>
-    </result>
-    <attributes/>
-    <GUI>
-      <xloc>448</xloc>
-      <yloc>272</yloc>
+      <xloc>432</xloc>
+      <yloc>208</yloc>
     </GUI>
   </transform>
   <transform>
@@ -342,30 +292,6 @@
     </GUI>
   </transform>
   <transform>
-    <name>start_cripto</name>
-    <type>RowGenerator</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <fields>
-</fields>
-    <interval_in_ms>5000</interval_in_ms>
-    <last_time_field>FiveSecondsAgo</last_time_field>
-    <limit>1</limit>
-    <never_ending>N</never_ending>
-    <row_time_field>now</row_time_field>
-    <attributes/>
-    <GUI>
-      <xloc>320</xloc>
-      <yloc>272</yloc>
-    </GUI>
-  </transform>
-  <transform>
     <name>start_price</name>
     <type>RowGenerator</type>
     <description/>
@@ -385,8 +311,8 @@
     <row_time_field>now</row_time_field>
     <attributes/>
     <GUI>
-      <xloc>320</xloc>
-      <yloc>144</yloc>
+      <xloc>304</xloc>
+      <yloc>208</yloc>
     </GUI>
   </transform>
   <transform>
