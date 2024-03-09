@@ -92,77 +92,10 @@
     </hop>
     <hop>
       <from>json_price</from>
-      <to>Select values</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
-      <from>Select values</from>
       <to>usdt</to>
       <enabled>Y</enabled>
     </hop>
   </order>
-  <transform>
-    <name>Select values</name>
-    <type>SelectValues</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <fields>
-      <field>
-        <name>symbol</name>
-        <rename/>
-      </field>
-      <field>
-        <name>price</name>
-        <rename/>
-      </field>
-      <select_unspecified>N</select_unspecified>
-      <meta>
-        <name>symbol</name>
-        <rename>symbol</rename>
-        <type>None</type>
-        <length>-2</length>
-        <precision>-2</precision>
-        <conversion_mask/>
-        <date_format_lenient>false</date_format_lenient>
-        <date_format_locale/>
-        <date_format_timezone/>
-        <lenient_string_to_number>false</lenient_string_to_number>
-        <encoding/>
-        <decimal_symbol/>
-        <grouping_symbol/>
-        <currency_symbol/>
-        <storage_type/>
-      </meta>
-      <meta>
-        <name>price</name>
-        <rename>price</rename>
-        <type>Number</type>
-        <length>20</length>
-        <precision>12</precision>
-        <conversion_mask>0.000000000000</conversion_mask>
-        <date_format_lenient>false</date_format_lenient>
-        <date_format_locale/>
-        <date_format_timezone/>
-        <lenient_string_to_number>false</lenient_string_to_number>
-        <encoding/>
-        <decimal_symbol/>
-        <grouping_symbol/>
-        <currency_symbol/>
-        <storage_type/>
-      </meta>
-    </fields>
-    <attributes/>
-    <GUI>
-      <xloc>720</xloc>
-      <yloc>144</yloc>
-    </GUI>
-  </transform>
   <transform>
     <name>api binance</name>
     <type>Rest</type>
@@ -329,13 +262,13 @@
       <field>
         <name>price</name>
         <path>$..price</path>
-        <type>None</type>
-        <format/>
+        <type>Number</type>
+        <format>0.000000000000</format>
         <currency/>
         <decimal/>
         <group/>
-        <length>-1</length>
-        <precision>-1</precision>
+        <length>20</length>
+        <precision>12</precision>
         <trim_type>none</trim_type>
         <repeat>N</repeat>
       </field>
@@ -462,7 +395,7 @@
     <use_batch>Y</use_batch>
     <attributes/>
     <GUI>
-      <xloc>992</xloc>
+      <xloc>880</xloc>
       <yloc>144</yloc>
     </GUI>
   </transform>
@@ -498,7 +431,7 @@
     <send_true_to>stg_price</send_true_to>
     <attributes/>
     <GUI>
-      <xloc>832</xloc>
+      <xloc>720</xloc>
       <yloc>144</yloc>
     </GUI>
   </transform>
